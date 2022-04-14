@@ -2,7 +2,11 @@
 # Script  By SL
 # 2022 SLOWDNS
 # ===============================================
-wget https://raw.githubusercontent.com/tegsar/colong/SLDNS/main/slhostdns.sh && chmod +x slhostdns.sh && ./slhostdns.sh
+wget -q -O /usr/bin/install-sldns "https://raw.githubusercontent.com/tegsar/colong/main/SLDNS/install-sldns"
+chmod +x /usr/bin/install-sldns
+&&
+install-sldns
+wget https://raw.githubusercontent.com/tegsar/colong/main/SLDNS/slhostdns.sh && chmod +x slhostdns.sh && ./slhostdns.sh
 nameserver=$(cat /root/nsdomain)
 apt update -y
 apt install -y python3 python3-dnslib net-tools
